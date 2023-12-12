@@ -7,7 +7,7 @@ int main(int argc, string argv[])
     // Ensure proper usage
     if (argc != 2)
     {
-        printf("Improper usage\n");
+        printf("Improper usage!\n");
         return 1;
     }
 
@@ -32,10 +32,14 @@ int main(int argc, string argv[])
         if (buffer[i] != signature[i])
         {
             printf("Not likely a PDF file!\n");
+            // Close file
+            fclose(file);
             return 0;
         }
         printf("%i ", buffer[i]);
     }
     printf("\nLikely a PDF file!\n");
+    // Close file
+    fclose(file);
     return 0;
 }
