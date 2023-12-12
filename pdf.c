@@ -9,4 +9,13 @@ int main(int argc, string argv[])
         printf("Improper usage\n");
         return 1;
     }
+
+    // Open file
+    string filename = argv[1];
+    FILE *file = fopen(filename, "r");
+    if (file == NULL)
+    {
+        printf("No such file found!\n");
+        return 1;
+    }
 }
